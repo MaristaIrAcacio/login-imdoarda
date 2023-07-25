@@ -17,10 +17,23 @@ function acessar() {
 
         if(nomeUser){
             dadosLista.push(nomeUser);
+            criaLista();
            // console.log(dadosLista);
         }
     }
     function criaLista(){
         let tabela = document.getElementById("tabela").innerHTML = " <tr><th>Nome Usuário</th><th>Ações</th></tr>";
-        
+        for(let i=0; i <= (dadosLista.length-1); i++){
+            tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class=' btn btn-success' onclick='editar(this.parentNode.parentNode.rowIndex)'>Editar</button><button class='btn btn-danger' onclick=''>Excluir</button></td></tr>";
+            document.getElementById('tabela').innerHTML = tabela;
+        }
     }
+
+    //Função p/edição nome
+
+    function editar(i){
+        document.getElementById("nomeUser").value = dadosLista[(i - 1)];
+        dadosLista.splice(dadosLista[(i-1), 1]);
+    }
+
+    //Função p/excluir nome
