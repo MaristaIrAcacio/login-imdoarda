@@ -7,6 +7,7 @@ function acessar() {
     } else {
         window.location.href = "aula2.html";
 		console.log(window.location.href);
+        }
     }
 
     var dadosLista = [];
@@ -16,7 +17,10 @@ function acessar() {
 
         if(nomeUser){
             dadosLista.push(nomeUser);
-            console.log(dadosLista);
+           // console.log(dadosLista);
         }
     }
-}
+    function criaLista(){
+        let tabela = document.getElementById("tabela").innerHTML = " <tr><th>Nome Usuário</th><th>Ações</th></tr>";
+        
+    }
